@@ -6,7 +6,7 @@ import getLatestRepos from "../lib/getLatestRepos";
 export default function LatestCode({ }) {
     const [repos, setRepos] = useState();
 
-    let token = "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";
+    let token =process.env.GITHUB_TOKEN;
     const repositories = async () => {
         await getLatestRepos(token).then((data) => setRepos(data))
     };
